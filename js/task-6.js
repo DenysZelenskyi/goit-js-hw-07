@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function destroyBoxes() {
+        boxesContainer.innerHTML = '';
+    }
+
+    function getRandomHexColor() {
+        return `#${Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, '0')}`;
+    }
+
     destroyBtn.addEventListener('click', destroyBoxes);
 
     function createBoxes(amount) {
@@ -30,15 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         boxesContainer.appendChild(fragment);
-    }
-
-    function destroyBoxes() {
-        boxesContainer.innerHTML = '';
-    }
-
-    function getRandomHexColor() {
-        return `#${Math.floor(Math.random() * 16777215)
-            .toString(16)
-            .padStart(6, '0')}`;
     }
 });
